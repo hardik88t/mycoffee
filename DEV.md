@@ -200,61 +200,440 @@ JWT_SECRET=your_jwt_secret_here
 - **Solve difficult problems** - Share solutions
 - **Learn something new** - Document insights
 
-## 🎯 Project-Specific Customization
+## 🎯 My Coffee Website - Specific Practices
 
-**Add your project-specific practices below:**
+### HTML5/CSS3/Vanilla JS Best Practices
 
-### [Your Tech Stack] Specific Practices
+#### HTML5 Semantic Structure
+```html
+<!-- Use semantic HTML5 elements for better SEO and accessibility -->
+<header role="banner">
+  <nav role="navigation" aria-label="Main navigation">
+    <!-- Navigation items -->
+  </nav>
+</header>
+
+<main role="main">
+  <section aria-labelledby="hero-heading">
+    <h1 id="hero-heading">Welcome to My Coffee</h1>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <!-- Footer content -->
+</footer>
 ```
-Example for Next.js projects:
-- Use TypeScript for type safety
-- Follow Next.js file-based routing conventions
-- Use shadcn/ui for consistent UI components
-- Implement proper SEO with metadata
-- Use Prisma for database operations
-- Deploy to Vercel for optimal performance
+
+#### CSS3 Performance & Organization
+```css
+/* Use CSS custom properties for consistent theming */
+:root {
+  --coffee-brown: #8B4513;
+  --cream-white: #FFF8DC;
+  --gold-accent: #DAA520;
+  --text-dark: #2F1B14;
+}
+
+/* Optimize animations for performance */
+.coffee-animation {
+  transform: translateZ(0); /* Force hardware acceleration */
+  will-change: transform; /* Hint browser for optimization */
+}
+
+/* Use efficient selectors */
+.coffee-card { /* Class selectors are faster than descendant selectors */ }
+```
+
+#### Vanilla JavaScript Best Practices
+```javascript
+// Use modern ES6+ features
+const coffeeData = {
+  origins: ['Ethiopia', 'Colombia', 'Guatemala'],
+  roastLevels: ['Light', 'Medium', 'Dark']
+};
+
+// Efficient DOM manipulation
+const updateCoffeeDisplay = (data) => {
+  const fragment = document.createDocumentFragment();
+  data.forEach(coffee => {
+    const element = createCoffeeElement(coffee);
+    fragment.appendChild(element);
+  });
+  document.getElementById('coffee-container').appendChild(fragment);
+};
+
+// Use event delegation for better performance
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.coffee-card')) {
+    handleCoffeeSelection(e.target);
+  }
+});
+```
+
+### Tailwind CSS Guidelines
+
+#### Custom Coffee Theme Configuration
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        coffee: {
+          50: '#FFF8DC',
+          100: '#F5F5DC',
+          200: '#DEB887',
+          300: '#D2B48C',
+          400: '#CD853F',
+          500: '#A0522D',
+          600: '#8B4513',
+          700: '#654321',
+          800: '#4A2C2A',
+          900: '#2F1B14'
+        }
+      },
+      fontFamily: {
+        'coffee': ['Playfair Display', 'serif'],
+        'body': ['Inter', 'sans-serif']
+      },
+      animation: {
+        'steam': 'steam 3s ease-in-out infinite',
+        'pour': 'pour 2s ease-out forwards'
+      }
+    }
+  }
+}
+```
+
+#### Responsive Design Patterns
+```html
+<!-- Mobile-first responsive classes -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="coffee-card p-4 bg-coffee-50 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+    <!-- Coffee card content -->
+  </div>
+</div>
+
+<!-- Responsive typography -->
+<h1 class="text-2xl md:text-4xl lg:text-6xl font-coffee text-coffee-900">
+  Artisan Coffee Roastery
+</h1>
 ```
 
 ### Development Environment Setup
+
+#### Required Tools & Versions
+```bash
+# No Node.js required - pure HTML/CSS/JS
+# Recommended tools:
+- VS Code with Live Server extension
+- Git for version control
+- Modern web browser for testing
+- Image optimization tools (TinyPNG, ImageOptim)
+
+# Optional development server:
+python -m http.server 8000
+# or
+npx http-server -p 8000
 ```
-Add your specific setup instructions:
-- Required Node.js version
-- Database setup steps
-- Environment variables needed
-- Development server commands
-- Testing commands
+
+#### File Organization Structure
+```
+mycoffee/
+├── index.html              # Homepage
+├── coffee.html             # Our Coffee page
+├── about.html              # About Us page
+├── brewing.html            # Brewing Guide page
+├── shop.html               # Shop page
+├── contact.html            # Contact page
+├── assets/
+│   ├── css/
+│   │   ├── main.css        # Main styles
+│   │   └── components.css  # Component styles
+│   ├── js/
+│   │   ├── main.js         # Main JavaScript
+│   │   ├── coffee-map.js   # Interactive map
+│   │   └── brewing-calc.js # Brewing calculators
+│   ├── images/
+│   │   ├── coffee/         # Coffee product images
+│   │   ├── process/        # Roasting process images
+│   │   └── team/           # Team photos
+│   └── icons/              # SVG icons and favicons
+├── docs/                   # Documentation
+└── README.md
 ```
 
 ### Code Style Guidelines
+
+#### Naming Conventions
+```javascript
+// Use descriptive, coffee-themed naming
+const coffeeOriginMap = new Map();
+const brewingCalculator = {
+  calculateRatio: (coffee, water) => coffee / water,
+  getBrewTime: (method) => brewTimes[method]
+};
+
+// CSS class naming (BEM methodology)
+.coffee-card { }
+.coffee-card__image { }
+.coffee-card__title { }
+.coffee-card--featured { }
 ```
-Add your project's code style rules:
-- Naming conventions
-- File organization
-- Import/export patterns
-- Component structure (for frontend)
-- API design patterns (for backend)
+
+#### File Organization Patterns
+```html
+<!-- Consistent HTML structure across pages -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title - My Coffee</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <!-- Navigation component -->
+  </header>
+
+  <main class="main-content">
+    <!-- Page-specific content -->
+  </main>
+
+  <footer class="site-footer">
+    <!-- Footer component -->
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+```
+
+### Performance Optimization
+
+#### Image Optimization
+```bash
+# Optimize images for web
+- Use WebP format for modern browsers with JPEG fallbacks
+- Compress images to 80-85% quality
+- Use responsive images with srcset
+- Implement lazy loading for below-fold images
+
+# Example responsive image markup
+<picture>
+  <source srcset="coffee-beans.webp" type="image/webp">
+  <img src="coffee-beans.jpg" alt="Fresh coffee beans" loading="lazy">
+</picture>
+```
+
+#### JavaScript Performance
+```javascript
+// Debounce scroll events for better performance
+const debounce = (func, wait) => {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
+// Use intersection observer for scroll animations
+const observeElements = () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+};
+```
+
+### UI/UX Best Practices for Coffee Websites
+
+#### Visual Hierarchy & Typography
+```css
+/* Establish clear visual hierarchy */
+h1 { font-size: 3rem; font-weight: 700; color: var(--coffee-900); }
+h2 { font-size: 2.25rem; font-weight: 600; color: var(--coffee-800); }
+h3 { font-size: 1.875rem; font-weight: 500; color: var(--coffee-700); }
+
+/* Readable body text */
+body {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--coffee-800);
+}
+
+/* Coffee-themed accents */
+.accent-text { color: var(--gold-accent); font-weight: 600; }
+```
+
+#### Interactive Elements
+```javascript
+// Smooth hover effects for coffee cards
+.coffee-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coffee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(139, 69, 19, 0.15);
+}
+
+// Coffee brewing animation
+const animateBrewingProcess = () => {
+  const steps = ['grind', 'heat', 'pour', 'brew', 'serve'];
+  steps.forEach((step, index) => {
+    setTimeout(() => {
+      document.querySelector(`.step-${step}`).classList.add('active');
+    }, index * 1000);
+  });
+};
+```
+
+#### Accessibility Guidelines
+```html
+<!-- Proper ARIA labels for interactive elements -->
+<button aria-label="Add Ethiopian coffee to cart" class="add-to-cart-btn">
+  <span aria-hidden="true">+</span>
+  Add to Cart
+</button>
+
+<!-- Skip navigation for keyboard users -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Proper heading structure -->
+<h1>My Coffee Roastery</h1>
+  <h2>Our Coffee Selection</h2>
+    <h3>Ethiopian Single Origin</h3>
+    <h3>Colombian Blend</h3>
+  <h2>Brewing Guides</h2>
+```
+
+### Security Best Practices
+
+#### Form Security
+```javascript
+// Input validation and sanitization
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const sanitizeInput = (input) => {
+  const div = document.createElement('div');
+  div.textContent = input;
+  return div.innerHTML;
+};
+
+// Contact form handling
+const handleContactForm = (formData) => {
+  const email = sanitizeInput(formData.get('email'));
+  const message = sanitizeInput(formData.get('message'));
+
+  if (!validateEmail(email)) {
+    showError('Please enter a valid email address');
+    return;
+  }
+
+  // Process form submission
+};
+```
+
+#### Content Security
+```html
+<!-- Add security headers via meta tags -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
 ```
 
 ### Testing Strategy
+
+#### Manual Testing Checklist
+```bash
+# Cross-browser testing
+- [ ] Chrome (latest)
+- [ ] Firefox (latest)
+- [ ] Safari (latest)
+- [ ] Edge (latest)
+
+# Device testing
+- [ ] Mobile phones (iOS/Android)
+- [ ] Tablets (iPad/Android)
+- [ ] Desktop (various screen sizes)
+
+# Feature testing
+- [ ] Coffee origin map interactions
+- [ ] Brewing calculator accuracy
+- [ ] Product filtering functionality
+- [ ] Contact form validation
+- [ ] Shopping cart operations
+- [ ] Image lazy loading
+- [ ] Scroll animations
 ```
-Document your testing approach:
-- Unit testing framework
-- Integration testing setup
-- E2E testing tools
-- Coverage requirements
-- Testing commands
+
+#### Performance Testing
+```bash
+# Use Lighthouse for audits
+npx lighthouse https://mycoffee.com --output html --output-path ./lighthouse-report.html
+
+# Test loading times
+- [ ] First Contentful Paint < 1.5s
+- [ ] Largest Contentful Paint < 2.5s
+- [ ] Cumulative Layout Shift < 0.1
+- [ ] First Input Delay < 100ms
 ```
 
 ### Deployment Process
+
+#### Pre-deployment Checklist
+```bash
+# Code quality checks
+- [ ] HTML validation (W3C validator)
+- [ ] CSS validation (W3C CSS validator)
+- [ ] JavaScript linting (ESLint)
+- [ ] Image optimization completed
+- [ ] Accessibility testing (WAVE, axe)
+- [ ] Performance optimization verified
+
+# Content checks
+- [ ] All images have alt text
+- [ ] Meta descriptions added
+- [ ] Favicon implemented
+- [ ] 404 page created
+- [ ] Sitemap.xml generated
 ```
-Document your deployment workflow:
-- Build process
-- Environment setup
-- Deployment commands
-- Rollback procedures
-- Monitoring setup
+
+#### Static Site Deployment
+```bash
+# GitHub Pages deployment
+git add .
+git commit -m "Deploy: Add coffee website v1.0"
+git push origin main
+
+# Netlify deployment (drag & drop or Git integration)
+# 1. Build command: (none needed for static site)
+# 2. Publish directory: /
+# 3. Environment variables: (none needed)
+
+# Performance monitoring post-deployment
+- Set up Google Analytics
+- Configure Google Search Console
+- Monitor Core Web Vitals
+- Set up uptime monitoring
 ```
 
 ---
 
-**Remember**: This DEV.md file should evolve with your project. Keep it updated and relevant to your current development practices!
+**Remember**: This DEV.md file should evolve with your coffee website project. Keep it updated with new techniques, optimizations, and lessons learned during development!
