@@ -1,0 +1,34 @@
+{
+  "name": "my-coffee",
+  "version": "1.0.0",
+  "description": "My Coffee - Artisan Coffee Roastery Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/index.html",
+    "serve": "http-server -p 3000 -o",
+    "dev": "live-server --port=3000 --open=/index.html --watch=assets/",
+    "preview": "http-server -p 8080 -o -c-1",
+    "build": "echo 'Static website - no build step required'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "coffee",
+    "website",
+    "static",
+    "html",
+    "css",
+    "javascript",
+    "tailwind"
+  ],
+  "author": "My Coffee Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hardik88t/mycoffee.git"
+  },
+  "homepage": "https://github.com/hardik88t/mycoffee#readme"
+}
