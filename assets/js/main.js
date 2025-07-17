@@ -3,6 +3,9 @@
 
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure mobile menu is closed on page load
+    resetMobileMenuState();
+
     // Initialize all components
     initNavigation();
     initScrollEffects();
@@ -11,6 +14,24 @@ document.addEventListener('DOMContentLoaded', function() {
     initCartDisplay();
 
     console.log('My Coffee website initialized');
+});
+
+// Handle page visibility changes (when user navigates back to page)
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+        // Page became visible, ensure mobile menu is closed
+        resetMobileMenuState();
+    }
+});
+
+// Handle page focus (additional safety net)
+window.addEventListener('focus', function() {
+    resetMobileMenuState();
+});
+
+// Handle before page unload to reset menu state
+window.addEventListener('beforeunload', function() {
+    resetMobileMenuState();
 });
 
 // Navigation functionality
@@ -30,9 +51,12 @@ function initNavigation() {
     });
     
     // Mobile menu toggle
-    mobileMenuBtn?.addEventListener('click', () => {
-        const isOpen = mobileMenu?.classList.contains('open');
-        
+    mobileMenuBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isOpen = mobileMenu?.classList.contains('open') || !mobileMenu?.classList.contains('hidden');
+
         if (isOpen) {
             closeMobileMenu();
         } else {
@@ -42,8 +66,14 @@ function initNavigation() {
     
     // Close mobile menu when clicking nav links
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            // Close menu immediately when navigation link is clicked
             closeMobileMenu();
+
+            // Small delay to ensure menu closes before navigation
+            setTimeout(() => {
+                resetMobileMenuState();
+            }, 100);
         });
     });
     
@@ -59,20 +89,51 @@ function openMobileMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 
-    mobileMenu?.classList.remove('hidden');
-    mobileMenu?.classList.add('open');
-    mobileMenuBtn?.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    if (mobileMenu && mobileMenuBtn) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+
+        console.log('Mobile menu opened');
+    }
 }
 
 function closeMobileMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 
-    mobileMenu?.classList.add('hidden');
-    mobileMenu?.classList.remove('open');
-    mobileMenuBtn?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    if (mobileMenu && mobileMenuBtn) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+
+        console.log('Mobile menu closed');
+    }
+}
+
+// Reset mobile menu state on page load
+function resetMobileMenuState() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+
+    if (mobileMenu && mobileMenuBtn) {
+        // Force close the menu by removing any open states
+        mobileMenu.classList.remove('open');
+        mobileMenu.classList.add('hidden');
+
+        // Reset button state
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+        // Reset body overflow (in case it was locked)
+        document.body.style.overflow = '';
+
+        // Additional safety: ensure the menu is not visible
+        mobileMenu.style.display = '';
+
+        console.log('Mobile menu state reset');
+    }
 }
 
 // Scroll effects and animations
@@ -326,21 +387,35 @@ function initCartDisplay() {
 
 function updateCartCount() {
     const cartCountElement = document.getElementById('cart-count');
-    if (!cartCountElement) return;
+    const mobileCartCountElement = document.getElementById('mobile-cart-count');
 
     try {
         const cart = JSON.parse(localStorage.getItem('mycoffee_cart') || '[]');
         const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
 
-        if (totalItems > 0) {
-            cartCountElement.textContent = totalItems;
-            cartCountElement.classList.remove('hidden');
-        } else {
-            cartCountElement.classList.add('hidden');
+        // Update main cart count
+        if (cartCountElement) {
+            if (totalItems > 0) {
+                cartCountElement.textContent = totalItems;
+                cartCountElement.classList.remove('hidden');
+            } else {
+                cartCountElement.classList.add('hidden');
+            }
+        }
+
+        // Update mobile cart count
+        if (mobileCartCountElement) {
+            if (totalItems > 0) {
+                mobileCartCountElement.textContent = totalItems;
+                mobileCartCountElement.classList.remove('hidden');
+            } else {
+                mobileCartCountElement.classList.add('hidden');
+            }
         }
     } catch (error) {
         console.error('Error updating cart count:', error);
-        cartCountElement.classList.add('hidden');
+        cartCountElement?.classList.add('hidden');
+        mobileCartCountElement?.classList.add('hidden');
     }
 }
 
@@ -348,6 +423,7 @@ function updateCartCount() {
 window.MyCoffee = {
     openMobileMenu,
     closeMobileMenu,
+    resetMobileMenuState,
     validateField,
     debounce,
     updateCartCount

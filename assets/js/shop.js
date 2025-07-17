@@ -186,24 +186,24 @@ function closeCart() {
 function showCartNotification(productName) {
     // Create notification
     const notification = document.createElement('div');
-    notification.className = 'fixed top-24 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform';
+    notification.className = 'fixed bottom-6 left-1/2 transform -translate-x-1/2 translate-y-full bg-cream text-coffee-900 shadow-xl z-50 transition-transform duration-300 max-w-sm';
     notification.innerHTML = `
-        <div class="flex items-center space-x-2">
-            <span>✓</span>
-            <span class="text-sm">${productName} added to cart</span>
+        <div class="flex items-center justify-center space-x-3 bg-gold rounded-lg p-3">
+            <span class="text-coffee-600 text-lg">☕</span>
+            <span class="text-sm font-semibold text-center">${productName} added to cart!</span>
         </div>
     `;
-    
+
     document.body.appendChild(notification);
-    
-    // Animate in
+
+    // Animate in from bottom
     setTimeout(() => {
-        notification.classList.remove('translate-x-full');
+        notification.classList.remove('translate-y-full');
     }, 100);
-    
-    // Animate out and remove
+
+    // Animate out to bottom and remove
     setTimeout(() => {
-        notification.classList.add('translate-x-full');
+        notification.classList.add('translate-y-full');
         setTimeout(() => {
             notification.remove();
         }, 300);

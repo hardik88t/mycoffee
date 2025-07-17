@@ -48,7 +48,9 @@
     <!-- Header -->
     <header class="site-header" role="banner">
         <nav class="container mx-auto px-4 py-4" role="navigation" aria-label="Main navigation">
+            <!-- Top Header Row -->
             <div class="flex items-center justify-between">
+                <!-- Logo -->
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2" aria-label="My Coffee Home">
                         <div class="w-10 h-10 bg-coffee-600 rounded-full flex items-center justify-center">
@@ -57,48 +59,57 @@
                         <span class="font-heading text-2xl font-bold text-coffee-900">My Coffee</span>
                     </a>
                 </div>
-                
+
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Home</a>
                     <a href="coffee.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Our Coffee</a>
-                    <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors" aria-current="page">About Us</a>
-                    <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Brewing Guide</a>
                     <a href="shop.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Shop</a>
+                    <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Brewing Guide</a>
+                    <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors" aria-current="page">About Us</a>
                     <a href="contact.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Contact</a>
                 </div>
 
-                <!-- Cart Icon -->
-                <div class="flex items-center space-x-4">
+                <!-- Mobile Controls (Cart + Menu Button) -->
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <!-- Cart Icon -->
                     <a href="shop.html" id="cart-btn" class="relative p-2 text-coffee-800 hover:text-coffee-600 transition-colors" aria-label="Shopping cart">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <!-- Shopping cart with better design -->
                             <path d="M7 4V2C7 1.45 7.45 1 8 1H9C9.55 1 10 1.45 10 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19L17.5 15C17.3 16.1 16.4 17 15.3 17H8.7C7.6 17 6.7 16.1 6.5 15L5 6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM8 6L9.3 15H14.7L16 6H8ZM10 19C10.55 19 11 19.45 11 20S10.55 21 10 21 9 20.55 9 20 9.45 19 10 19ZM14 19C14.55 19 15 19.45 15 20S14.55 21 14 21 13 20.55 13 20 13.45 19 14 19Z"/>
                         </svg>
                         <span id="cart-count" class="absolute -top-1 -right-1 bg-gold text-coffee-900 text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold hidden">0</span>
                     </a>
 
+                    <!-- Mobile Menu Button -->
                     <button class="mobile-menu-btn md:hidden p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
-                    <svg class="w-6 h-6 text-coffee-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                        <svg class="w-6 h-6 text-coffee-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            
-            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-4 border-t border-coffee-200 hidden">
-                <div class="flex flex-col space-y-4 pt-4">
-                    <a href="index.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Home</a>
-                    <a href="coffee.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Our Coffee</a>
-                    <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">About Us</a>
-                    <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Brewing Guide</a>
-                    <a href="shop.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Shop</a>
-                    <a href="contact.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Contact</a>
-                    <div class="border-t border-coffee-200 pt-4 mt-4">
-                        <a href="shop.html" class="flex items-center nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M7 4V2C7 1.45 7.45 1 8 1H9C9.55 1 10 1.45 10 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19L17.5 15C17.3 16.1 16.4 17 15.3 17H8.7C7.6 17 6.7 16.1 6.5 15L5 6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM8 6L9.3 15H14.7L16 6H8ZM10 19C10.55 19 11 19.45 11 20S10.55 21 10 21 9 20.55 9 20 9.45 19 10 19ZM14 19C14.55 19 15 19.45 15 20S14.55 21 14 21 13 20.55 13 20 13.45 19 14 19Z"/>
-                            </svg>
-                            Shopping Cart
-                        </a>
+
+            <!-- Mobile Navigation Menu (Full Width Below Header) -->
+            <div id="mobile-menu" class="mobile-menu md:hidden w-full hidden">
+                <div class="border-t border-coffee-200 mt-4 pt-4 pb-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="index.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors py-2 px-2 rounded hover:bg-coffee-50">Home</a>
+                        <a href="coffee.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors py-2 px-2 rounded hover:bg-coffee-50">Our Coffee</a>
+                        <a href="shop.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors py-2 px-2 rounded hover:bg-coffee-50">Shop</a>
+                        <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors py-2 px-2 rounded hover:bg-coffee-50">Brewing Guide</a>
+                        <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors py-2 px-2 rounded hover:bg-coffee-50">About Us</a>
+                        <a href="contact.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors py-2 px-2 rounded hover:bg-coffee-50">Contact</a>
+
+                        <!-- Mobile Cart Link -->
+                        <div class="border-t border-coffee-200 pt-4 mt-4">
+                            <a href="shop.html" class="flex items-center nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors py-2 px-2 rounded hover:bg-coffee-50">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7 4V2C7 1.45 7.45 1 8 1H9C9.55 1 10 1.45 10 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19L17.5 15C17.3 16.1 16.4 17 15.3 17H8.7C7.6 17 6.7 16.1 6.5 15L5 6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM8 6L9.3 15H14.7L16 6H8ZM10 19C10.55 19 11 19.45 11 20S10.55 21 10 21 9 20.55 9 20 9.45 19 10 19ZM14 19C14.55 19 15 19.45 15 20S14.55 21 14 21 13 20.55 13 20 13.45 19 14 19Z"/>
+                                </svg>
+                                Shopping Cart
+                                <span id="mobile-cart-count" class="ml-auto bg-gold text-coffee-900 text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold hidden">0</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
