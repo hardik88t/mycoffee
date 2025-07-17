@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initAnimations();
     initFormValidation();
-    
+    initCartDisplay();
+
     console.log('My Coffee website initialized');
 });
 
@@ -306,10 +307,48 @@ function debounce(func, wait) {
     };
 }
 
+// Cart display functionality for all pages
+function initCartDisplay() {
+    updateCartCount();
+
+    // Listen for cart updates from localStorage
+    window.addEventListener('storage', function(e) {
+        if (e.key === 'mycoffee_cart') {
+            updateCartCount();
+        }
+    });
+
+    // Listen for custom cart update events
+    window.addEventListener('cartUpdated', function() {
+        updateCartCount();
+    });
+}
+
+function updateCartCount() {
+    const cartCountElement = document.getElementById('cart-count');
+    if (!cartCountElement) return;
+
+    try {
+        const cart = JSON.parse(localStorage.getItem('mycoffee_cart') || '[]');
+        const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+
+        if (totalItems > 0) {
+            cartCountElement.textContent = totalItems;
+            cartCountElement.classList.remove('hidden');
+        } else {
+            cartCountElement.classList.add('hidden');
+        }
+    } catch (error) {
+        console.error('Error updating cart count:', error);
+        cartCountElement.classList.add('hidden');
+    }
+}
+
 // Export functions for use in other modules
 window.MyCoffee = {
     openMobileMenu,
     closeMobileMenu,
     validateField,
-    debounce
+    debounce,
+    updateCartCount
 };

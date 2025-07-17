@@ -211,11 +211,13 @@ function showCartNotification(productName) {
 }
 
 function saveCart() {
-    localStorage.setItem('mycoffee-cart', JSON.stringify(cart));
+    localStorage.setItem('mycoffee_cart', JSON.stringify(cart));
+    // Trigger cart update event for other pages
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
 }
 
 function loadCart() {
-    const savedCart = localStorage.getItem('mycoffee-cart');
+    const savedCart = localStorage.getItem('mycoffee_cart');
     if (savedCart) {
         cart = JSON.parse(savedCart);
         updateCartDisplay();
