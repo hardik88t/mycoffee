@@ -8,7 +8,7 @@
     "serve": "http-server -p 3000 -o",
     "dev": "live-server --port=3000 --open=/index.html --watch=assets/",
     "preview": "http-server -p 8080 -o -c-1",
-    "build": "echo 'Static website - no build step required'",
+    "build": "mkdir -p public && cp -r *.html assets public/",
     "test": "echo 'No tests specified'"
   },
   "keywords": [
