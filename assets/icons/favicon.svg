@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coffee cup background -->
+  <circle cx="16" cy="16" r="16" fill="#8B4513"/>
+  
+  <!-- Coffee cup -->
+  <path d="M8 12h12v8c0 2.2-1.8 4-4 4s-4-1.8-4-4v-8z" fill="#FFF8DC"/>
+  
+  <!-- Coffee liquid -->
+  <path d="M9 13h10v6c0 1.7-1.3 3-3 3s-3-1.3-3-3v-6z" fill="#654321"/>
+  
+  <!-- Coffee cup handle -->
+  <path d="M20 14v4c1.1 0 2-.9 2-2s-.9-2-2-2z" stroke="#FFF8DC" stroke-width="1.5" fill="none"/>
+  
+  <!-- Steam -->
+  <path d="M12 8c0 1 .5 2 .5 2s.5-1 .5-2-.5-1-.5-1-.5 0-.5 1z" fill="#DAA520" opacity="0.8"/>
+  <path d="M16 7c0 1 .5 2 .5 2s.5-1 .5-2-.5-1-.5-1-.5 0-.5 1z" fill="#DAA520" opacity="0.8"/>
+  <path d="M20 8c0 1 .5 2 .5 2s.5-1 .5-2-.5-1-.5-1-.5 0-.5 1z" fill="#DAA520" opacity="0.8"/>
+</svg>

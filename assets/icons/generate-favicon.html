@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        .favicon-preview { width: 32px; height: 32px; margin: 10px; }
+        .instructions { background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>My Coffee Favicon Generator</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <p>1. Right-click on the favicon below and save as "favicon.ico"</p>
+        <p>2. Place the favicon.ico file in the assets/icons/ directory</p>
+        <p>3. The favicon is already referenced in all HTML pages</p>
+    </div>
+    
+    <h3>Favicon Preview (32x32):</h3>
+    <canvas id="favicon" width="32" height="32" class="favicon-preview" style="border: 1px solid #ccc;"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Background circle
+        ctx.fillStyle = '#8B4513';
+        ctx.beginPath();
+        ctx.arc(16, 16, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Coffee cup
+        ctx.fillStyle = '#FFF8DC';
+        ctx.fillRect(8, 12, 12, 8);
+        ctx.beginPath();
+        ctx.arc(14, 20, 4, 0, Math.PI);
+        ctx.fill();
+        
+        // Coffee liquid
+        ctx.fillStyle = '#654321';
+        ctx.fillRect(9, 13, 10, 6);
+        ctx.beginPath();
+        ctx.arc(14, 19, 3, 0, Math.PI);
+        ctx.fill();
+        
+        // Handle
+        ctx.strokeStyle = '#FFF8DC';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(22, 16, 2, -Math.PI/2, Math.PI/2);
+        ctx.stroke();
+        
+        // Steam
+        ctx.fillStyle = '#DAA520';
+        ctx.globalAlpha = 0.8;
+        
+        // Steam line 1
+        ctx.beginPath();
+        ctx.ellipse(12, 8, 1, 2, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Steam line 2
+        ctx.beginPath();
+        ctx.ellipse(16, 7, 1, 2, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Steam line 3
+        ctx.beginPath();
+        ctx.ellipse(20, 8, 1, 2, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Download function
+        function downloadFavicon() {
+            const link = document.createElement('a');
+            link.download = 'favicon.ico';
+            link.href = canvas.toDataURL('image/x-icon');
+            link.click();
+        }
+        
+        // Add download button
+        const button = document.createElement('button');
+        button.textContent = 'Download favicon.ico';
+        button.onclick = downloadFavicon;
+        button.style.padding = '10px 20px';
+        button.style.marginTop = '10px';
+        button.style.backgroundColor = '#8B4513';
+        button.style.color = 'white';
+        button.style.border = 'none';
+        button.style.borderRadius = '5px';
+        button.style.cursor = 'pointer';
+        
+        document.body.appendChild(button);
+    </script>
+</body>
+</html>
