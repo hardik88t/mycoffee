@@ -1,0 +1,255 @@
+/* My Coffee - Main Stylesheet */
+/* Tailwind CSS will be included via CDN for now, this file contains custom styles */
+
+/* CSS Custom Properties for Coffee Theme */
+:root {
+  /* Coffee Color Palette */
+  --coffee-50: #FFF8DC;
+  --coffee-100: #F5F5DC;
+  --coffee-200: #DEB887;
+  --coffee-300: #D2B48C;
+  --coffee-400: #CD853F;
+  --coffee-500: #A0522D;
+  --coffee-600: #8B4513;
+  --coffee-700: #654321;
+  --coffee-800: #4A2C2A;
+  --coffee-900: #2F1B14;
+  
+  /* Gold Accents */
+  --gold-light: #F4E4BC;
+  --gold-medium: #DAA520;
+  --gold-dark: #B8860B;
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Spacing */
+  --section-padding: 4rem 0;
+  --container-padding: 1rem;
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--coffee-800);
+  background-color: var(--coffee-50);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--coffee-900);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Links */
+a {
+  color: var(--coffee-600);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-dark);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background-color: var(--coffee-600);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--coffee-700);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--coffee-600);
+  border: 2px solid var(--coffee-600);
+}
+
+.btn-secondary:hover {
+  background-color: var(--coffee-600);
+  color: white;
+}
+
+.btn-gold {
+  background-color: var(--gold-medium);
+  color: var(--coffee-900);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+}
+
+/* Layout Components */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+/* Navigation Styles */
+.site-header {
+  background-color: rgba(255, 248, 220, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  background-color: rgba(255, 248, 220, 0.98);
+  box-shadow: 0 2px 20px rgba(139, 69, 19, 0.1);
+}
+
+/* Coffee-themed animations */
+@keyframes steam {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-10px) rotate(2deg); opacity: 1; }
+}
+
+@keyframes pour {
+  0% { transform: translateY(-20px) scaleY(0); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+.steam-animation {
+  animation: steam 3s ease-in-out infinite;
+}
+
+.pour-animation {
+  animation: pour 2s ease-out forwards;
+}
+
+/* Card Components */
+.coffee-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(139, 69, 19, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.coffee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(139, 69, 19, 0.15);
+}
+
+/* Utility Classes */
+.text-coffee-primary { color: var(--coffee-600); }
+.text-coffee-dark { color: var(--coffee-900); }
+.text-gold { color: var(--gold-medium); }
+
+.bg-coffee-light { background-color: var(--coffee-100); }
+.bg-coffee-primary { background-color: var(--coffee-600); }
+.bg-coffee-dark { background-color: var(--coffee-900); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
+    --section-padding: 2rem 0;
+  }
+  
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--gold-medium);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--coffee-900);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact My Coffee for inquiries, wholesale orders, or visit our roastery. Get in touch with our coffee experts today.">
+    <meta name="keywords" content="contact coffee roastery, coffee shop location, wholesale coffee, coffee inquiries">
+    <title>Contact Us - Get in Touch | My Coffee</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            50: '#FFF8DC', 100: '#F5F5DC', 200: '#DEB887', 300: '#D2B48C', 400: '#CD853F',
+                            500: '#A0522D', 600: '#8B4513', 700: '#654321', 800: '#4A2C2A', 900: '#2F1B14'
+                        },
+                        gold: { light: '#F4E4BC', DEFAULT: '#DAA520', dark: '#B8860B' }
+                    },
+                    fontFamily: { 'heading': ['Playfair Display', 'serif'], 'body': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-body">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <nav class="container mx-auto px-4 py-4" role="navigation" aria-label="Main navigation">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2" aria-label="My Coffee Home">
+                        <div class="w-10 h-10 bg-coffee-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">☕</span>
+                        </div>
+                        <span class="font-heading text-2xl font-bold text-coffee-900">My Coffee</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Home</a>
+                    <a href="coffee.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Our Coffee</a>
+                    <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">About Us</a>
+                    <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Brewing Guide</a>
+                    <a href="shop.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Shop</a>
+                    <a href="contact.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors" aria-current="page">Contact</a>
+                </div>
+                
+                <button class="mobile-menu-btn md:hidden p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <svg class="w-6 h-6 text-coffee-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-4 border-t border-coffee-200 hidden">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="index.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Home</a>
+                    <a href="coffee.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Our Coffee</a>
+                    <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">About Us</a>
+                    <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Brewing Guide</a>
+                    <a href="shop.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Shop</a>
+                    <a href="contact.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="pt-20">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-br from-coffee-100 to-coffee-200 py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="font-heading text-5xl md:text-6xl font-bold text-coffee-900 mb-6" data-aos="fade-up">
+                    Contact Us
+                </h1>
+                <p class="text-xl text-coffee-700 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    We'd love to hear from you! Whether you have questions about our coffee, 
+                    need brewing advice, or want to explore wholesale opportunities.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Contact Information -->
+        <section class="section bg-white" aria-labelledby="contact-info-heading">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div data-aos="fade-right">
+                        <h2 id="contact-info-heading" class="font-heading text-3xl font-bold text-coffee-900 mb-6">
+                            Send us a Message
+                        </h2>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-coffee-800 mb-2">First Name *</label>
+                                    <input type="text" id="first-name" name="firstName" required 
+                                           class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-coffee-800 mb-2">Last Name *</label>
+                                    <input type="text" id="last-name" name="lastName" required 
+                                           class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-coffee-800 mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-coffee-800 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-coffee-800 mb-2">Subject *</label>
+                                <select id="subject" name="subject" required 
+                                        class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent">
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="wholesale">Wholesale Orders</option>
+                                    <option value="brewing">Brewing Questions</option>
+                                    <option value="subscription">Subscription Support</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-coffee-800 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                                          placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <input type="checkbox" id="newsletter" name="newsletter" 
+                                       class="mt-1 w-4 h-4 text-gold border-coffee-300 rounded focus:ring-gold">
+                                <label for="newsletter" class="text-sm text-coffee-700">
+                                    I'd like to receive updates about new coffee releases and brewing tips
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="w-full btn btn-primary">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Details -->
+                    <div data-aos="fade-left">
+                        <h2 class="font-heading text-3xl font-bold text-coffee-900 mb-6">
+                            Visit Our Roastery
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Location -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-coffee-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">📍</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-coffee-900 mb-1">Address</h3>
+                                    <p class="text-coffee-700">
+                                        123 Coffee Street<br>
+                                        Roastery District, CD 12345<br>
+                                        United States
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-coffee-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">📞</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-coffee-900 mb-1">Phone</h3>
+                                    <p class="text-coffee-700">
+                                        <a href="tel:+15551234273" class="hover:text-gold transition-colors">(555) 123-BREW</a><br>
+                                        <span class="text-sm text-coffee-600">Monday - Friday, 8am - 6pm</span>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-coffee-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">✉️</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-coffee-900 mb-1">Email</h3>
+                                    <p class="text-coffee-700">
+                                        <a href="mailto:hello@mycoffee.com" class="hover:text-gold transition-colors">hello@mycoffee.com</a><br>
+                                        <a href="mailto:wholesale@mycoffee.com" class="hover:text-gold transition-colors text-sm">wholesale@mycoffee.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Hours -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-coffee-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">🕒</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-coffee-900 mb-1">Hours</h3>
+                                    <div class="text-coffee-700 text-sm space-y-1">
+                                        <p><span class="font-medium">Monday - Friday:</span> 7:00 AM - 7:00 PM</p>
+                                        <p><span class="font-medium">Saturday:</span> 8:00 AM - 6:00 PM</p>
+                                        <p><span class="font-medium">Sunday:</span> 9:00 AM - 5:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="mt-8">
+                            <h3 class="font-semibold text-coffee-900 mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-coffee-600 text-white rounded-lg flex items-center justify-center hover:bg-coffee-700 transition-colors" aria-label="Facebook">
+                                    📘
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-coffee-600 text-white rounded-lg flex items-center justify-center hover:bg-coffee-700 transition-colors" aria-label="Instagram">
+                                    📷
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-coffee-600 text-white rounded-lg flex items-center justify-center hover:bg-coffee-700 transition-colors" aria-label="Twitter">
+                                    🐦
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-coffee-600 text-white rounded-lg flex items-center justify-center hover:bg-coffee-700 transition-colors" aria-label="YouTube">
+                                    📺
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Map Section -->
+        <section class="section bg-coffee-50" aria-labelledby="map-heading">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="map-heading" class="font-heading text-3xl font-bold text-coffee-900 mb-4">
+                        Find Us
+                    </h2>
+                    <p class="text-lg text-coffee-700">
+                        Located in the heart of the Roastery District, we're easy to find and always welcoming visitors.
+                    </p>
+                </div>
+                
+                <!-- Placeholder Map -->
+                <div class="bg-coffee-200 rounded-lg h-96 flex items-center justify-center" data-aos="fade-up">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🗺️</div>
+                        <p class="text-coffee-700 font-medium">Interactive Map</p>
+                        <p class="text-coffee-600 text-sm">123 Coffee Street, Roastery District</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Wholesale Section -->
+        <section class="section bg-white" aria-labelledby="wholesale-heading">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 id="wholesale-heading" class="font-heading text-3xl font-bold text-coffee-900 mb-6" data-aos="fade-up">
+                        Wholesale Partnerships
+                    </h2>
+                    <p class="text-lg text-coffee-700 mb-8" data-aos="fade-up" data-aos-delay="100">
+                        Are you a café, restaurant, or retailer interested in serving our premium coffee? 
+                        We'd love to partner with you to bring exceptional coffee to your customers.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                🏪
+                            </div>
+                            <h3 class="font-semibold text-coffee-900 mb-2">Cafés & Restaurants</h3>
+                            <p class="text-coffee-700 text-sm">Custom blends and training for your team</p>
+                        </div>
+                        
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                🏢
+                            </div>
+                            <h3 class="font-semibold text-coffee-900 mb-2">Office Solutions</h3>
+                            <p class="text-coffee-700 text-sm">Keep your workplace energized with premium coffee</p>
+                        </div>
+                        
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                            <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                🛒
+                            </div>
+                            <h3 class="font-semibold text-coffee-900 mb-2">Retail Partners</h3>
+                            <p class="text-coffee-700 text-sm">Stock our coffee in your store</p>
+                        </div>
+                    </div>
+                    
+                    <div data-aos="fade-up" data-aos-delay="500">
+                        <a href="mailto:wholesale@mycoffee.com" class="btn btn-gold mr-4">Contact Wholesale</a>
+                        <a href="#" class="btn btn-secondary">Download Catalog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-coffee-800 text-coffee-100" role="contentinfo">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
+                            <span class="text-coffee-900 font-bold">☕</span>
+                        </div>
+                        <span class="font-heading text-xl font-bold">My Coffee</span>
+                    </div>
+                    <p class="text-coffee-300 mb-4">Artisan coffee roastery dedicated to bringing you the perfect cup.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-heading text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="coffee.html" class="text-coffee-300 hover:text-gold transition-colors">Our Coffee</a></li>
+                        <li><a href="about.html" class="text-coffee-300 hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="brewing.html" class="text-coffee-300 hover:text-gold transition-colors">Brewing Guide</a></li>
+                        <li><a href="contact.html" class="text-coffee-300 hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-heading text-lg font-semibold mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html" class="text-coffee-300 hover:text-gold transition-colors">All Coffee</a></li>
+                        <li><a href="shop.html" class="text-coffee-300 hover:text-gold transition-colors">Subscriptions</a></li>
+                        <li><a href="shop.html" class="text-coffee-300 hover:text-gold transition-colors">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-heading text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2 text-coffee-300">
+                        <p>📍 123 Coffee Street<br>Roastery District, CD 12345</p>
+                        <p>📞 (555) 123-BREW</p>
+                        <p>✉️ hello@mycoffee.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-coffee-700 mt-8 pt-8 text-center text-coffee-400">
+                <p>&copy; 2025 My Coffee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

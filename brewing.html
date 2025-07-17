@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master the art of coffee brewing with our comprehensive guides, calculators, and expert tips for pour-over, espresso, French press, and more.">
+    <meta name="keywords" content="coffee brewing guide, pour over, espresso, French press, coffee ratios, brewing methods">
+    <title>Brewing Guide - Master Coffee Brewing | My Coffee</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            50: '#FFF8DC', 100: '#F5F5DC', 200: '#DEB887', 300: '#D2B48C', 400: '#CD853F',
+                            500: '#A0522D', 600: '#8B4513', 700: '#654321', 800: '#4A2C2A', 900: '#2F1B14'
+                        },
+                        gold: { light: '#F4E4BC', DEFAULT: '#DAA520', dark: '#B8860B' }
+                    },
+                    fontFamily: { 'heading': ['Playfair Display', 'serif'], 'body': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-body">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <nav class="container mx-auto px-4 py-4" role="navigation" aria-label="Main navigation">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2" aria-label="My Coffee Home">
+                        <div class="w-10 h-10 bg-coffee-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">☕</span>
+                        </div>
+                        <span class="font-heading text-2xl font-bold text-coffee-900">My Coffee</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Home</a>
+                    <a href="coffee.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Our Coffee</a>
+                    <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">About Us</a>
+                    <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors" aria-current="page">Brewing Guide</a>
+                    <a href="shop.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Shop</a>
+                    <a href="contact.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <button class="mobile-menu-btn md:hidden p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                    <svg class="w-6 h-6 text-coffee-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-4 border-t border-coffee-200 hidden">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="index.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Home</a>
+                    <a href="coffee.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Our Coffee</a>
+                    <a href="about.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">About Us</a>
+                    <a href="brewing.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Brewing Guide</a>
+                    <a href="shop.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Shop</a>
+                    <a href="contact.html" class="nav-link text-coffee-800 hover:text-coffee-600 font-medium transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="pt-20">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-br from-coffee-100 to-coffee-200 py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="font-heading text-5xl md:text-6xl font-bold text-coffee-900 mb-6" data-aos="fade-up">
+                    Brewing Guide
+                </h1>
+                <p class="text-xl text-coffee-700 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Master the art of coffee brewing with our step-by-step guides, expert tips, 
+                    and interactive calculators for the perfect cup every time.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Brewing Calculator -->
+        <section class="section bg-white" aria-labelledby="calculator-heading">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 id="calculator-heading" class="font-heading text-4xl font-bold text-coffee-900 mb-4">
+                        Coffee Brewing Calculator
+                    </h2>
+                    <p class="text-lg text-coffee-700 max-w-2xl mx-auto">
+                        Get the perfect coffee-to-water ratio for your preferred brewing method.
+                    </p>
+                </div>
+                
+                <div class="max-w-2xl mx-auto bg-coffee-50 rounded-lg p-8" data-aos="fade-up">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="coffee-amount" class="block text-sm font-medium text-coffee-800 mb-2">Coffee Amount (grams)</label>
+                            <input type="number" id="coffee-amount" class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold" value="20" min="1" max="100">
+                        </div>
+                        
+                        <div>
+                            <label for="brew-method" class="block text-sm font-medium text-coffee-800 mb-2">Brewing Method</label>
+                            <select id="brew-method" class="w-full px-3 py-2 border border-coffee-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold">
+                                <option value="pour-over">Pour Over (1:15)</option>
+                                <option value="french-press">French Press (1:12)</option>
+                                <option value="espresso">Espresso (1:2)</option>
+                                <option value="cold-brew">Cold Brew (1:8)</option>
+                                <option value="aeropress">AeroPress (1:14)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-white rounded-lg border-2 border-gold">
+                        <div class="text-center">
+                            <h3 class="font-heading text-xl font-semibold text-coffee-900 mb-2">Recommended Recipe</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-sm text-coffee-600">Coffee</p>
+                                    <p class="text-2xl font-bold text-coffee-900" id="coffee-result">20g</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-coffee-600">Water</p>
+                                    <p class="text-2xl font-bold text-coffee-900" id="water-result">300ml</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-sm text-coffee-600">Brew Time</p>
+                                <p class="text-lg font-semibold text-gold" id="time-result">3-4 minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Brewing Methods -->
+        <section class="section bg-coffee-50" aria-labelledby="methods-heading">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 id="methods-heading" class="font-heading text-4xl font-bold text-coffee-900 mb-4">
+                        Brewing Methods
+                    </h2>
+                    <p class="text-lg text-coffee-700">
+                        Explore different brewing techniques to discover your perfect cup.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Pour Over -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+                        <div class="aspect-w-16 aspect-h-12 bg-coffee-100">
+                            <div class="flex items-center justify-center text-6xl">☕</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-semibold text-coffee-900 mb-3">Pour Over</h3>
+                            <p class="text-coffee-700 mb-4 text-sm">Clean, bright flavors with full control over extraction. Perfect for highlighting single origin characteristics.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Ratio:</span>
+                                    <span class="font-medium">1:15</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Grind:</span>
+                                    <span class="font-medium">Medium-Fine</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Time:</span>
+                                    <span class="font-medium">3-4 minutes</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Water Temp:</span>
+                                    <span class="font-medium">195-205°F</span>
+                                </div>
+                            </div>
+                            <button class="mt-4 w-full btn btn-primary text-sm" onclick="showBrewingGuide('pour-over')">View Guide</button>
+                        </div>
+                    </div>
+                    
+                    <!-- French Press -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+                        <div class="aspect-w-16 aspect-h-12 bg-coffee-100">
+                            <div class="flex items-center justify-center text-6xl">🫖</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-semibold text-coffee-900 mb-3">French Press</h3>
+                            <p class="text-coffee-700 mb-4 text-sm">Full-bodied, rich coffee with oils and sediment. Simple immersion brewing method.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Ratio:</span>
+                                    <span class="font-medium">1:12</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Grind:</span>
+                                    <span class="font-medium">Coarse</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Time:</span>
+                                    <span class="font-medium">4 minutes</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Water Temp:</span>
+                                    <span class="font-medium">200°F</span>
+                                </div>
+                            </div>
+                            <button class="mt-4 w-full btn btn-primary text-sm" onclick="showBrewingGuide('french-press')">View Guide</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Espresso -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <div class="aspect-w-16 aspect-h-12 bg-coffee-100">
+                            <div class="flex items-center justify-center text-6xl">☕</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-semibold text-coffee-900 mb-3">Espresso</h3>
+                            <p class="text-coffee-700 mb-4 text-sm">Concentrated, intense coffee with rich crema. Foundation for milk-based drinks.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Ratio:</span>
+                                    <span class="font-medium">1:2</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Grind:</span>
+                                    <span class="font-medium">Fine</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Time:</span>
+                                    <span class="font-medium">25-30 seconds</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Pressure:</span>
+                                    <span class="font-medium">9 bars</span>
+                                </div>
+                            </div>
+                            <button class="mt-4 w-full btn btn-primary text-sm" onclick="showBrewingGuide('espresso')">View Guide</button>
+                        </div>
+                    </div>
+                    
+                    <!-- AeroPress -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
+                        <div class="aspect-w-16 aspect-h-12 bg-coffee-100">
+                            <div class="flex items-center justify-center text-6xl">🔄</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-semibold text-coffee-900 mb-3">AeroPress</h3>
+                            <p class="text-coffee-700 mb-4 text-sm">Versatile brewing method combining immersion and pressure for clean, smooth coffee.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Ratio:</span>
+                                    <span class="font-medium">1:14</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Grind:</span>
+                                    <span class="font-medium">Medium-Fine</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Time:</span>
+                                    <span class="font-medium">1-2 minutes</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Water Temp:</span>
+                                    <span class="font-medium">175-185°F</span>
+                                </div>
+                            </div>
+                            <button class="mt-4 w-full btn btn-primary text-sm" onclick="showBrewingGuide('aeropress')">View Guide</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Cold Brew -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="400">
+                        <div class="aspect-w-16 aspect-h-12 bg-coffee-100">
+                            <div class="flex items-center justify-center text-6xl">🧊</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-semibold text-coffee-900 mb-3">Cold Brew</h3>
+                            <p class="text-coffee-700 mb-4 text-sm">Smooth, low-acid coffee brewed with cold water over extended time. Perfect for hot days.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Ratio:</span>
+                                    <span class="font-medium">1:8</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Grind:</span>
+                                    <span class="font-medium">Coarse</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Time:</span>
+                                    <span class="font-medium">12-24 hours</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Water Temp:</span>
+                                    <span class="font-medium">Room Temp</span>
+                                </div>
+                            </div>
+                            <button class="mt-4 w-full btn btn-primary text-sm" onclick="showBrewingGuide('cold-brew')">View Guide</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Chemex -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="500">
+                        <div class="aspect-w-16 aspect-h-12 bg-coffee-100">
+                            <div class="flex items-center justify-center text-6xl">⏳</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-heading text-xl font-semibold text-coffee-900 mb-3">Chemex</h3>
+                            <p class="text-coffee-700 mb-4 text-sm">Clean, crisp coffee with bright flavors. Thick filters remove oils and sediment.</p>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Ratio:</span>
+                                    <span class="font-medium">1:16</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Grind:</span>
+                                    <span class="font-medium">Medium-Coarse</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Time:</span>
+                                    <span class="font-medium">4-6 minutes</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-coffee-600">Water Temp:</span>
+                                    <span class="font-medium">200°F</span>
+                                </div>
+                            </div>
+                            <button class="mt-4 w-full btn btn-primary text-sm" onclick="showBrewingGuide('chemex')">View Guide</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-coffee-800 text-coffee-100" role="contentinfo">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
+                            <span class="text-coffee-900 font-bold">☕</span>
+                        </div>
+                        <span class="font-heading text-xl font-bold">My Coffee</span>
+                    </div>
+                    <p class="text-coffee-300 mb-4">Artisan coffee roastery dedicated to bringing you the perfect cup.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-heading text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="coffee.html" class="text-coffee-300 hover:text-gold transition-colors">Our Coffee</a></li>
+                        <li><a href="about.html" class="text-coffee-300 hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="brewing.html" class="text-coffee-300 hover:text-gold transition-colors">Brewing Guide</a></li>
+                        <li><a href="contact.html" class="text-coffee-300 hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-heading text-lg font-semibold mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html" class="text-coffee-300 hover:text-gold transition-colors">All Coffee</a></li>
+                        <li><a href="shop.html" class="text-coffee-300 hover:text-gold transition-colors">Subscriptions</a></li>
+                        <li><a href="shop.html" class="text-coffee-300 hover:text-gold transition-colors">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-heading text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2 text-coffee-300">
+                        <p>📍 123 Coffee Street<br>Roastery District, CD 12345</p>
+                        <p>📞 (555) 123-BREW</p>
+                        <p>✉️ hello@mycoffee.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-coffee-700 mt-8 pt-8 text-center text-coffee-400">
+                <p>&copy; 2025 My Coffee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/brewing-calculator.js"></script>
+</body>
+</html>
